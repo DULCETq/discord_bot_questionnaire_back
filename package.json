@@ -1,0 +1,39 @@
+{
+  "name": "discord-task-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for task management",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/main.js",
+    "start:dev": "ts-node src/main.ts",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.9",
+    "@nestjs/config": "^3.2.2",
+    "@nestjs/platform-express": "^10.3.9",
+    "@nestjs/swagger": "^7.3.1",
+    "@nestjs/typeorm": "^10.0.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^20.14.2",
+    "class-validator": "^0.14.1",
+    "discord.js": "^14.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "sequelize-typescript": "^2.1.6",
+    "swagger": "^0.7.5",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.3.2",
+    "@nestjs/schematics": "^10.1.1",
+    "@nestjs/testing": "^10.3.9",
+    "@types/jest": "^29.5.12",
+    "chai": "^4.3.4",
+    "jest": "^29.7.0",
+    "mocha": "^10.0.0",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.1"
+  }
+}
