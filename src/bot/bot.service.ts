@@ -1,6 +1,6 @@
 import {Injectable, OnModuleInit} from '@nestjs/common';
 import {ConfigService} from '@nestjs/config';
-import {Client, GatewayIntentBits} from 'discord.js';
+import {Client, GatewayIntentBits, TextChannel, ChannelType} from 'discord.js';
 import {TaskService} from '../task/task.service';
 
 @Injectable()
@@ -70,5 +70,16 @@ export class BotService implements OnModuleInit {
     });
 
     await this.client.login(this.configService.get<string>('discordBotToken'));
+  }
+
+  async startBot() {
+    await this.client.login(this.configService.get<string>('discordBotToken'));
+  }
+
+  async sendMessage(channelId: string, message: string) {
+    const channel = await this.client.channels.fetch(channelId);
+    if (channel && channel.type === ChannelType.GuildText) {
+      await (channel as TextChannel).send(message);
+    }
   }
 }
